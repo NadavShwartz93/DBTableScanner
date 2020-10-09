@@ -7,6 +7,7 @@ import os
 
 
 class ConnectionWindow(tk.Tk, pg.GuiProperties):
+    pass_counter = 0
     def __init__(self):
         super().__init__()
         pg.GuiProperties.__init__(self)
@@ -46,7 +47,8 @@ class ConnectionWindow(tk.Tk, pg.GuiProperties):
         self.user_entry.grid(row=3, column=1, ipady=3)
 
         self.pass_str = tk.StringVar()
-        self.pass_entry = tk.Entry(self, textvar=self.pass_str)
+        self.bullet = "\u2022"   # #specifies bullet character
+        self.pass_entry = tk.Entry(self, show=self.bullet, textvar=self.pass_str) # Change the password entry to be bullet
         self.pass_entry.grid(row=4, column=1, ipady=3)
 
         # Create connection button
@@ -54,6 +56,11 @@ class ConnectionWindow(tk.Tk, pg.GuiProperties):
                                 activebackground='#4287f5', bd=3)
         tk.Label(self, text='').grid(row=5, column=1)
         conn_button.grid(row=6, column=0, sticky='E', ipadx=10)
+
+        # Create show password button
+        self.show_hide_pass_button = tk.Button(self, text="Show", command=self.show_hide_pass,
+                                               activebackground='#4287f5', bd=3)
+        self.show_hide_pass_button.grid(row=4, column=2, sticky='E', ipadx=5, padx=(20, 0))
 
     def check_connection(self):
         host = str(self.host_str.get())
@@ -81,6 +88,16 @@ class ConnectionWindow(tk.Tk, pg.GuiProperties):
     def callback(self):
         qm.close_connection()
         self.destroy()
+
+    def show_hide_pass(self):
+        if ConnectionWindow.pass_counter.__mod__(2) == 0:
+            self.pass_entry['show'] = ""
+            self.show_hide_pass_button['text'] = "Hide"
+            ConnectionWindow.pass_counter +=1
+        else:
+            self.pass_entry['show'] = self.bullet
+            self.show_hide_pass_button['text'] = "Show"
+            ConnectionWindow.pass_counter +=1
 
 
 if __name__ == "__main__":
