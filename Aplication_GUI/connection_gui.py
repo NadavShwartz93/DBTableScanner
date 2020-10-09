@@ -34,22 +34,18 @@ class ConnectionWindow(tk.Tk, pg.GuiProperties):
 
         # Create Entries
         self.host_str = tk.StringVar()
-        self.host_str.set("localhost")  # Set the host entry to default text
         self.host_entry = tk.Entry(self, textvar=self.host_str, width=20)
         self.host_entry.grid(row=1, column=1, pady=(50, 0), ipady=3)
 
         self.db_str = tk.StringVar()
-        self.db_str.set("myfueldb")     # Set the database entry to default text
         self.db_entry = tk.Entry(self, textvar=self.db_str, width=20)
         self.db_entry.grid(row=2, column=1, ipady=3)
 
         self.user_str = tk.StringVar()
-        self.user_str.set("root")        # Set the user entry to default text
         self.user_entry = tk.Entry(self, textvar=self.user_str)
         self.user_entry.grid(row=3, column=1, ipady=3)
 
         self.pass_str = tk.StringVar()
-        self.pass_str.set("AG697373AG")     # Set the password entry to default text
         self.pass_entry = tk.Entry(self, textvar=self.pass_str)
         self.pass_entry.grid(row=4, column=1, ipady=3)
 
