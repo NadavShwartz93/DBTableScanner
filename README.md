@@ -16,7 +16,7 @@ Technologies | Version
 IntelliJ IDEA 2020.2.3 (Community Edition).**
 
 # Operating instructions
-* Run [connection_gui.py](Aplication_GUI/ConnectionWindow.png).
+* Run [connection_gui.py](Aplication_GUI/connection_gui.py) that generated [ConnectionWindow](Aplication_GUI/ConnectionWindow.png)
 * Insert MySQL connection details: host, user, database name, password.
 * Press connect button.
 * If connected successfully, select table from [SelectTableWindow](Aplication_GUI/SelectTableWindow.png).
