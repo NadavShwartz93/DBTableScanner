@@ -1,5 +1,6 @@
 # DBTableScanner
 Scan MySQL db table into Excel table formate.
+![](VideoOfTheProject.gif)
 
 # Overview
 Little tool for scan DB MySQL table into Excel table.
