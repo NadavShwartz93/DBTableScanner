@@ -2,7 +2,7 @@
 Scan MySQL db table into Excel table formate.
 
 # Overview
-Little tool for scan DB MySQL table into Excel table.\
+Little tool for scan DB MySQL table into Excel table.
 
 
 # Project technologies:
